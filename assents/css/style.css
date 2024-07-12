@@ -1,0 +1,336 @@
+/* HEADER */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 1rem; 
+}
+
+.header .photo-header {
+    width: 200px;
+    height: 200px;
+}
+
+.header .title-header {
+    text-align: center;
+}
+
+.header .information-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header .information-header p {
+    margin: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.header .information-header p::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+}
+
+.header .information-header .job::before {
+    background-image: url(../img/cargo.png);
+}
+
+.header .information-header .location::before {
+    background-image: url(../img/localidade.png);
+}
+
+.header .information-header .phone::before {
+    background-image: url(../img/telefone.png);
+}
+
+.header .information-header .email::before {
+    background-image: url(../img/email.png);
+}
+
+.header .social-header img {
+    width: 40px;
+    margin: 0 .5rem;
+}
+
+@media screen and (min-width:541px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information";
+    }
+
+    .header .photo-header {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .title-header {
+        grid-area: title;
+        text-align: start;
+        max-width: 200px;
+    }
+
+    .header .information-header {
+        grid-area: information;
+    }
+
+    .header .social-header {
+        text-align: center;       
+    }
+}
+
+/* SECTION */
+
+.acordeon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    transition: .25s;
+}
+
+.acordeon.open,
+.acordeon:hover {
+    background-color: #55569E;
+    border-color: #55569E;
+}
+
+.acordeon .trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+.acordeon .trigger h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: start;
+}
+
+.acordeon .trigger:hover {
+    cursor: pointer;
+}
+
+.acordeon .trigger::after {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/seta.png');
+    transition: .25s;
+}
+
+.acordeon.open .trigger::after {
+    transform: rotate(180deg);
+}
+
+.acordeon .content {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
+
+.acordeon.open .content {
+    display: block;
+    padding: 0 1rem 1rem 2rem;
+    height: auto;
+    opacity: 1;
+}
+
+.languages {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.languages li {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding-right: 1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.languages li::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/check.png');
+    margin-right: .5rem;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.education li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1rem 0;
+}
+
+.education li h3 {
+    margin-bottom: .5rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.projects li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1rem 0;
+}
+
+.projects li .title-projects {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-decoration: none; 
+    margin-bottom: .5rem;   
+}
+
+.projects li .title-projects::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/git.png');
+    margin-right: .5rem;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.experience li {
+    margin: 1rem 0;
+}
+
+.experience li h3 {
+    margin-bottom: .5rem;
+}
+
+.experience li .period {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5rem;
+}
+
+.experience li .period::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/calendario.png');
+    margin-right: .5rem;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skills .tools ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skills .personal ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.skills .personal ul li {
+    margin-left: 2rem;
+    padding: .5rem;
+}
+
+.skills .tools h3,
+.skills .personal h3 {
+    margin-bottom: 1.5rem;
+}
+
+.skills .tools ul li img{
+    max-width: 50px;
+    margin: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills .tools ul,
+    .skills .personal ul {
+        justify-content: center;
+    }
+
+    .skills .tools h3,
+    .skills .personal h3 {
+        text-align: center;
+    }
+}
